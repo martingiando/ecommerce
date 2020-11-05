@@ -6,6 +6,9 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 
+import CartIcon from '../carticon/carticon';
+import { faDivide } from '@fortawesome/free-solid-svg-icons';
+
 const Menu = () =>{
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
@@ -27,6 +30,7 @@ const Menu = () =>{
             <FormControl type="text" placeholder="Buscador" className="mr-sm-2" />
             <Button variant="outline-success">Buscar</Button>
           </Form>
+        <CartIcon />
         </Navbar.Collapse>
       </Navbar>
     )}
