@@ -1,0 +1,13 @@
+h3{
+    font-size: 60px;
+}
+
+button{
+    margin: 5px;
+    font-size: 30px;
+}
+
+.centered{
+    display: flex;
+    justify-content: center;
+}

@@ -7,7 +7,6 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 
 import CartIcon from '../carticon/carticon';
-import { faDivide } from '@fortawesome/free-solid-svg-icons';
 
 const Menu = () =>{
     return(
