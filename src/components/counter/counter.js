@@ -1,7 +1,8 @@
 import {useState} from 'react'
-import './counter.css'
+import './counter.scss'
+import Button from 'react-bootstrap/Button'
 
-const Contador = ({initialValue, maxValue, onAdd}) => {
+const Counter = ({initialValue, maxValue, onAdd}) => {
     const [counter, setCounter] = useState(initialValue)
 
     const adding = () => {
@@ -29,12 +30,12 @@ const Contador = ({initialValue, maxValue, onAdd}) => {
             </div>
             <div className='centered'>
             <div>
-                <button onClick={adding}>+</button>
-                <button onClick={removing}>-</button>
+                <Button variant="primary" onClick={adding} className='buttonCounter'>+</Button>
+                <Button variant="primary" onClick={removing} className='buttonCounter'>-</Button>
             </div>
         </div>
         </>
     )
 }
 
-export default Contador
+export default Counter

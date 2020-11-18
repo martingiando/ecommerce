@@ -8,7 +8,7 @@ import FormControl from 'react-bootstrap/FormControl'
 
 import CartIcon from '../carticon/carticon';
 
-const Menu = () =>{
+const NavBar = () =>{
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="#home">Game Masters</Navbar.Brand>
@@ -34,4 +34,4 @@ const Menu = () =>{
       </Navbar>
     )}
 
-export default Menu
+export default NavBar
