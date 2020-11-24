@@ -1,23 +1,26 @@
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import Button from '../Button/Button'
 import './item.scss'
 
-const Item = ({ item, index }) => {
+
+
+const Item = ({ item }) => {
     return (
-        <>
-            <Card className={'itemContainer'} style={{ width: '18rem' }}>
+        <div id='Item'>
+            
+            <Card>
                 <Card.Img variant="top" src={item.img} />
                 <Card.Body>
-                <Card.Title>{item.modelo}</Card.Title>
+                    <Card.Title>{item.producto} {item.modelo}</Card.Title>
                     <Card.Text>
-                        <h5>{item.producto}</h5>
-                        <h5>${item.precio}</h5>
-                        <h5>Stock disponible: {item.stock}</h5>
+                        {item.precio}
                     </Card.Text>
-                    <Button variant="primary">Ver producto</Button>
                 </Card.Body>
+                <Card.Footer>
+                    <Button content={`Detalle`} path={`/detail/${item.id}`} />
+                </Card.Footer>
             </Card>
-        </>
+        </div>
     )
 }
 

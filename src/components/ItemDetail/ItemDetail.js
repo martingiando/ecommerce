@@ -1,20 +1,23 @@
-import { useState, useEffect } from 'react'
-import Counter from '../counter/counter'
+import './ItemDetail.scss'
+import Button from '../Button/Button'
 
 const ItemDetail = ({product}) => {
+    console.log(product)
     return (
         <>
+        <Button content={'Atras'} path={'/'} />
         <div id='ItemDetail'>
-            <img src={product.img}></img>
-            <h3>{product.producto}</h3>
-            <h3>Modelo: {product.modelo}</h3>
-            <h4>${product.precio}</h4>
-            <h6>Stock: {product.stock} unidades</h6>
-            <h6>Tipos de Memoria RAM Soportadas: {product.ramSoportadas}</h6>
-            <h6>Procesador Grafico: {product.procGrafico}</h6>
-            <h6>Maxima Memoria RAM Soportada: {product.maxRam}</h6>
+            <div>
+                <img src={product.img} alt={'Imagen'}></img>
+            </div>
+            <div>
+            <h3 className={'productDetail'}>{product.producto}</h3>
+            <h3 className={'productDetail'}>Modelo: {product.modelo}</h3>
+            <h4 className={'productDetail'}>${product.precio}</h4>
+            <h6 className={'productDetail'}>Stock: {product.stock} unidades</h6>
+            <Button content={'Comprar'} callback={()=> {alert(`Agregaste ${product.producto} ${product.modelo} al carrito`)}}/>
+            </div>
         </div>
-        <Counter />
         </>
     )
 }

@@ -1,6 +1,17 @@
-.itemListContainer{
-    display: inline-flex;
-    flex-direction: row;
-    width: 100%;
+#itemListContainer {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    background-color: black;
+    padding-top: 20px;
+  }
+
+div .card-deck{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.card{
+  height: 100%;
 }

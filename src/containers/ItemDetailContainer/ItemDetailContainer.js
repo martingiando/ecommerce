@@ -1,30 +1,33 @@
 import { useState, useEffect } from 'react'
-import { getProduct } from '../../api/products'
+import { useParams } from 'react-router-dom'
+import { getProductById } from '../../api/products'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
+import Spinner from '../../components/Spinner/Spinner'
 
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
+    const { id } = useParams()
 
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            getProduct().then(
+            getProductById(id).then(
             (response) => {
                 setProduct(response)
                 setLoading(false)
             }
         )}, 3000)
         
-    }, [])
+    }, [id])
 
 
     return(
         <div id='ItemDetailContainer'>
             {
-                loading ? <h3>Cargando producto...</h3> :
-                <ItemDetail product={product} />
+                loading ? (<Spinner />) : (
+                <ItemDetail product={product} />)
             }
         </div>
     )
