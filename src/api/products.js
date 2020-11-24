@@ -34,7 +34,7 @@ export const getProducts = () => {
 export const getProductById = (id) => {
     return new Promise ((resolve, reject) => {
         resolve(
-            products.find((product) => product.id === id)
+            products.find((product) => product.id == id)
             )
     })
 }

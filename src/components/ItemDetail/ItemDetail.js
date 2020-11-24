@@ -2,7 +2,6 @@ import './ItemDetail.scss'
 import Button from '../Button/Button'
 
 const ItemDetail = ({product}) => {
-    console.log(product)
     return (
         <>
         <Button content={'Atras'} path={'/'} />

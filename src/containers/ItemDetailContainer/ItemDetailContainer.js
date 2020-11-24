@@ -22,7 +22,6 @@ const ItemDetailContainer = () => {
         
     }, [id])
 
-
     return(
         <div id='ItemDetailContainer'>
             {
@@ -30,6 +29,7 @@ const ItemDetailContainer = () => {
                 <ItemDetail product={product} />)
             }
         </div>
+        
     )
 }
 
