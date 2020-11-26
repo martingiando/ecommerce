@@ -1,7 +1,13 @@
 import './ItemDetail.scss'
 import Button from '../Button/Button'
+import Counter from '../counter/counter'
 
 const ItemDetail = ({product}) => {
+
+    const addToCart = (value) => {
+        alert(`Se agregaron ${value} ${product.producto} ${product.modelo} al carrito`)
+    }
+
     return (
         <>
         <Button content={'Atras'} path={'/'} />
@@ -14,7 +20,7 @@ const ItemDetail = ({product}) => {
             <h3 className={'productDetail'}>Modelo: {product.modelo}</h3>
             <h4 className={'productDetail'}>${product.precio}</h4>
             <h6 className={'productDetail'}>Stock: {product.stock} unidades</h6>
-            <Button content={'Comprar'} callback={()=> {alert(`Agregaste ${product.producto} ${product.modelo} al carrito`)}}/>
+            <Counter initialValue={1} maxValue={10} onAdd={addToCart} />
             </div>
         </div>
         </>

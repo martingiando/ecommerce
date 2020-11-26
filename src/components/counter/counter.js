@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './counter.scss'
-import Button from 'react-bootstrap/Button'
+import Button from '../Button/Button'
 
 const Counter = ({initialValue, maxValue, onAdd}) => {
     const [counter, setCounter] = useState(initialValue)
@@ -22,6 +22,10 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
         }
     }
 
+    const onAddHandler = () => {
+        onAdd(counter)
+    }
+
     return(<>
         <div className='centered'>
             <div>
@@ -30,9 +34,10 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
             </div>
             <div className='centered'>
             <div>
-                <Button variant="primary" onClick={adding} className='buttonCounter'>+</Button>
-                <Button variant="primary" onClick={removing} className='buttonCounter'>-</Button>
+                <Button content={'+'} callback={adding} className='buttonCounter'></Button>
+                <Button content={'-'} callback={removing} className='buttonCounter'></Button>
             </div>
+            <Button content={'Agregar al Carrito'} callback={onAddHandler} />
         </div>
         </>
     )
