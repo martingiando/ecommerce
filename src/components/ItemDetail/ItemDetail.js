@@ -5,7 +5,7 @@ import Counter from '../counter/counter'
 const ItemDetail = ({product}) => {
 
     const addToCart = (value) => {
-        alert(`Se agregaron ${value} ${product.producto} ${product.modelo} al carrito`)
+        alert(`Añadiste ${value} ${product.producto} ${product.modelo} al carrito`)
     }
 
     return (

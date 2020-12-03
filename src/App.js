@@ -3,10 +3,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './containers/Home/Home'
 import NavBar from './components/navbar/navbar'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
+import Cart from './containers/CartContainer/Cart'
+import { CartContext } from './Context/CartContext';
 
 
 function App() {
   return (
+    <CartContext.Provider>
     <BrowserRouter>
 
       <NavBar />
@@ -21,9 +24,14 @@ function App() {
           <ItemDetailContainer />
         </Route>
 
+        <Route exact path='/cart'>
+          <Cart />
+        </Route>
+
       </Switch>
 
     </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 
