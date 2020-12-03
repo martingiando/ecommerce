@@ -7,7 +7,7 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
 
     const adding = () => {
         if (counter >= initialValue && counter < maxValue) {
-            return setCounter(counter + 1)
+            return setCounter(counter + 1), onAdd(counter + 1)
         } else if (counter === maxValue){
             console.log('maxValuee')
         }
@@ -16,14 +16,10 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
 
     const removing = () => {
         if (counter > initialValue) {
-            return setCounter(counter - 1)
+            return setCounter(counter - 1), onAdd(counter - 1)
         } else if (counter <= initialValue){
             console.log('minValue')
         }
-    }
-
-    const onAddHandler = () => {
-        onAdd(counter)
     }
 
     return(<>
@@ -37,7 +33,6 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
                 <Button content={'+'} callback={adding} className='buttonCounter'></Button>
                 <Button content={'-'} callback={removing} className='buttonCounter'></Button>
             </div>
-            <Button content={'Agregar al Carrito'} callback={onAddHandler} />
         </div>
         </>
     )

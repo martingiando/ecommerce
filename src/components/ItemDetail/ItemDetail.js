@@ -1,11 +1,14 @@
 import './ItemDetail.scss'
 import Button from '../Button/Button'
 import Counter from '../counter/counter'
+import { useState } from 'react'
 
 const ItemDetail = ({product}) => {
 
-    const addToCart = (value) => {
-        alert(`Añadiste ${value} ${product.producto} ${product.modelo} al carrito`)
+    const [cartCount, setCartCount] = useState(0)
+
+    const addToCart = () => {
+        alert(`Añadiste ${cartCount} ${product.producto} ${product.modelo} al carrito`)
     }
 
     return (
@@ -20,7 +23,8 @@ const ItemDetail = ({product}) => {
             <h3 className={'productDetail'}>Modelo: {product.modelo}</h3>
             <h4 className={'productDetail'}>${product.precio}</h4>
             <h6 className={'productDetail'}>Stock: {product.stock} unidades</h6>
-            <Counter initialValue={1} maxValue={10} onAdd={addToCart} />
+            <Counter initialValue={1} maxValue={10} onAdd={(value) => setCartCount(value)} />
+            <Button content={`Agregar al carrito`} callback={addToCart} />
             </div>
         </div>
         </>
