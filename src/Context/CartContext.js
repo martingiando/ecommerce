@@ -1,6 +1,26 @@
-import React from 'react'
+import  { createContext, useContext, useState}  from "react";
 
-export const CartContext = React.createContext();
+const CartContext = createContext();
+const useCartContext = () => useContext(CartContext);
 
-export const CartProvider = () => {
+export const CartProvider = ({children}) => {
+
+    const [carrito, setCarrito] = useState([])
+
+    
+
+    const handleCarrito = (newValue) => {
+        if (newValue in carrito) {
+
+        } else {
+            setCarrito([...carrito, newValue])
+            console.log(carrito)
+        }     
+    }
+
+    return <CartContext.Provider value={{ carrito, handleCarrito }}>
+        {children}
+    </CartContext.Provider>
 }
+
+export default useCartContext

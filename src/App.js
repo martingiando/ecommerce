@@ -4,12 +4,12 @@ import Home from './containers/Home/Home'
 import NavBar from './components/navbar/navbar'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 import Cart from './containers/CartContainer/Cart'
-import { CartContext } from './Context/CartContext';
+import { CartContext, CartProvider } from './Context/CartContext';
 
 
 function App() {
   return (
-    <CartContext.Provider>
+    <CartProvider>
     <BrowserRouter>
 
       <NavBar />
@@ -31,7 +31,7 @@ function App() {
       </Switch>
 
     </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
