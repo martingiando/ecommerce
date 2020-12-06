@@ -6,16 +6,20 @@ import useCartContext from '../../Context/CartContext'
 
 const ItemDetail = ({product}) => {
 
-    const [cartCount, setCartCount] = useState(1)
+    const [quantity, setQuantity] = useState(1)
 
-    const { handleCarrito } = useCartContext();
+    const { addProduct } = useCartContext();
 
     // const addToCart = () => {
     //     alert(`Añadiste ${cartCount} ${product.producto} ${product.modelo} al carrito`)
     // }
 
-    const onAddItem = (value) => {
-        setCartCount(value)
+    const onAddItem = (counter) => {
+        setQuantity(counter)
+    }
+
+    const addToCart = () => {
+        addProduct(product, quantity)
     }
 
     return (
@@ -31,7 +35,7 @@ const ItemDetail = ({product}) => {
             <h4 className={'productDetail'}>${product.precio}</h4>
             <h6 className={'productDetail'}>Stock: {product.stock} unidades</h6>
             <Counter initialValue={1} maxValue={10} onAdd={onAddItem} />
-            <Button content={`Agregar al carrito ${cartCount} ${product.modelo}`} callback={() => handleCarrito(product)} />
+            <Button content={`Agregar al carrito ${quantity} ${product.modelo}`} callback={addToCart} />
             </div>
         </div>
         </>

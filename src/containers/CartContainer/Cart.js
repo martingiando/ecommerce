@@ -1,21 +1,34 @@
-import useCartContext from '../../Context/CartContext';
- 
+import Button from "../../components/Button/Button";
+import useCartContext from "../../Context/CartContext";
 
-export default function Cart() {
-    
-    const { carrito } = useCartContext()
-    
-    return(
-        <div className="Cart">
-            <h1>CARRITO</h1> 
+const Cart = () => {
+    const { products, delProduct, getGrandTotal } = useCartContext();
+    console.log(products);
 
-                 <p>
-                     {carrito.map((entry) => (
-                         
-                     <p>{entry.producto} - {entry.modelo} - {entry.precio}</p>
-                     
-                     ))}
-                 </p>
-        </div>
-    )
+    const handleDel = (p) => {
+        delProduct(p.id)
+    }
+
+    //   const handleTotal = (p) => {
+    //       getGrandTotal(p)
+    //   }
+
+    return (
+        <>
+            <Button content={`Seguir Comprando`} path={'/'} />
+            <div id="Cart">
+                {products.map((product) => (
+                    <div key={product.id}>
+                        <Button content={`X`} callback={() => handleDel(product)} />
+                        <h1> Producto: {product.modelo} </h1>
+                        <h1> Cantidad: {product.quantity} </h1>
+                        <img src={product.img} />
+                    </div>
+                ))}
+                <h3>${getGrandTotal()}</h3>
+            </div>
+        </>
+    );
 }
+
+export default Cart

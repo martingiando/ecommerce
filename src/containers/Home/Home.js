@@ -28,8 +28,7 @@ const Home = () => {
         <>
             <Greeting greeting={'Bienvenidos a Game Masters!'} />
             {
-                loading ? (<Spinner />) : (
-                    <ItemList items={items} />)
+                loading ? (<Spinner />) : (<ItemList items={items} />)
             }
         </>
     )
