@@ -1,8 +1,9 @@
 import Greeting from '../../components/greeting/greeting'
 import ItemList from '../../components/ItemList/ItemList'
-import { getProducts } from '../../api/products'
+// import { getProducts } from '../../api/products'
 import { useState, useEffect } from 'react'
 import Spinner from '../../components/Spinner/Spinner'
+import { getProdFromDatabase } from '../../api/products'
 
 const Home = () => {
 
@@ -11,14 +12,12 @@ const Home = () => {
 
     useEffect(() => {
         setLoading(true)
-
         setTimeout(() => {
-            getProducts().then(
+            getProdFromDatabase().then(
                 (response) => {
                     setItems(response)
                     setLoading(false)
-                }
-            )
+                })
         }, 3000);
 
     }, [])

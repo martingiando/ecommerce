@@ -1,3 +1,15 @@
+export function getProdFromDatabase() {
+    return new Promise((resolve) => {
+        resolve(products);
+    });
+}
+
+export function getProdSolo() {
+    return new Promise((resolve) => {
+        resolve(products);
+    });
+}
+
 const products = [
     {
         id: 1,
@@ -25,16 +37,16 @@ const products = [
     }
 ]
 
-export const getProducts = () => {
-    return new Promise((resolve) => {
-      resolve(products)
-    })
-  }
+// export const getProducts = () => {
+//     return new Promise((resolve) => {
+//         resolve(products)
+//     })
+// }
 
-export const getProductById = (id) => {
-    return new Promise ((resolve, reject) => {
-        resolve(
-            products.find((product) => product.id == id)
-            )
-    })
-}
+// export const getProductById = (id) => {
+//     return new Promise((resolve, reject) => {
+//         resolve(
+//             products.find((product) => product.id == id)
+//         )
+//     })
+// }

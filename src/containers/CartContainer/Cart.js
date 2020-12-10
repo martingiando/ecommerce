@@ -22,7 +22,7 @@ const Cart = () => {
                         <Button content={`X`} callback={() => handleDel(product)} />
                         <h1> Producto: {product.modelo} </h1>
                         <h1> Cantidad: {product.quantity} </h1>
-                        <img src={product.img} />
+                        <img src={product.img} alt={product.modelo} />
                     </div>
                 ))}
                 <h3>${getGrandTotal()}</h3>
