@@ -5,9 +5,7 @@ const Greeting = ({greeting}) => {
     
     return (
         <main>
-
             <h2 className={'title'}>{greeting}</h2>
-
         </main>
     );
 }

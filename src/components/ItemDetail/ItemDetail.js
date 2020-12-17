@@ -4,7 +4,7 @@ import Counter from '../counter/counter'
 import { useState } from 'react'
 import useCartContext from '../../Context/CartContext'
 
-const ItemDetail = ({product}) => {
+const ItemDetail = ({ product }) => {
 
     const [quantity, setQuantity] = useState(1)
 
@@ -24,20 +24,20 @@ const ItemDetail = ({product}) => {
 
     return (
         <>
-        <Button content={'Atras'} path={'/'} />
-        <div id='ItemDetail'>
-            <div>
-                <img src={product.img} alt={'Imagen'}></img>
+            <Button content={'Atras'} path={'/'} />
+            <div id='ItemDetail'>
+                <div>
+                    <img src={product.img} alt={'Imagen'}></img>
+                </div>
+                <div>
+                    <h3 className={'productDetail'}>{product.producto}</h3>
+                    <h3 className={'productDetail'}>Modelo: {product.modelo}</h3>
+                    <h4 className={'productDetail'}>${product.precio}</h4>
+                    <h6 className={'productDetail'}>Stock: {product.stock} unidades</h6>
+                    <Counter initialValue={1} maxValue={10} onAdd={onAddItem} />
+                    <Button content={`Agregar al carrito ${quantity} ${product.modelo}`} callback={addToCart} />
+                </div>
             </div>
-            <div>
-            <h3 className={'productDetail'}>{product.producto}</h3>
-            <h3 className={'productDetail'}>Modelo: {product.modelo}</h3>
-            <h4 className={'productDetail'}>${product.precio}</h4>
-            <h6 className={'productDetail'}>Stock: {product.stock} unidades</h6>
-            <Counter initialValue={1} maxValue={10} onAdd={onAddItem} />
-            <Button content={`Agregar al carrito ${quantity} ${product.modelo}`} callback={addToCart} />
-            </div>
-        </div>
         </>
     )
 }

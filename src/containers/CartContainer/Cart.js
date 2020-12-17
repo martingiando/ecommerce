@@ -26,6 +26,7 @@ const Cart = () => {
                     </div>
                 ))}
                 <h3>${getGrandTotal()}</h3>
+                <Button content={`Comprar`} path={'/checkout'} />
             </div>
         </>
     );
