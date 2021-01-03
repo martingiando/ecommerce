@@ -11,7 +11,7 @@ const Item = ({ item }) => {
             <Card>
                 <Card.Img variant="top" src={item.img} />
                 <Card.Body>
-                    <Card.Title>{item.producto} {item.modelo}</Card.Title>
+                    <Card.Title>{item.modelo}</Card.Title>
                     <Card.Text>
                         ${item.precio}
                     </Card.Text>
