@@ -13,11 +13,11 @@ const Item = ({ item }) => {
                 <Card.Body>
                     <Card.Title>{item.producto} {item.modelo}</Card.Title>
                     <Card.Text>
-                        {item.precio}
+                        ${item.precio}
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <Button content={`Detalle`} path={`/detail/${item.id}`} />
+                    <Button content={`Detalle`} path={`/detail/${item.id}`}/>
                 </Card.Footer>
             </Card>
         </div>

@@ -38,6 +38,10 @@ const ItemDetail = ({ product }) => {
                     <Button content={`Agregar al carrito ${quantity} ${product.modelo}`} callback={addToCart} />
                 </div>
             </div>
+            <div id={'productDescription'}>
+                <h3>Descripción</h3>
+                <p>{product.descripcion}</p>
+            </div>
         </>
     )
 }

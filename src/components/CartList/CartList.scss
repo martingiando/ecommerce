@@ -1,0 +1,21 @@
+#Cart{
+    #CartTitles{
+        display: flex;
+        justify-content: space-around;
+    }
+    #productsCart{
+        display: flex;
+        justify-content: space-around;
+    }
+    #iconTrash{
+        cursor: pointer;
+        &:hover{
+            color: red;
+        }
+    }
+    #cartTotal{
+        text-align: end;
+        margin-top: 50px;
+        margin-right: 180px;
+    }
+}

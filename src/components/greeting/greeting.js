@@ -5,7 +5,7 @@ const Greeting = ({greeting}) => {
     
     return (
         <main>
-            <h2 className={'title'}>{greeting}</h2>
+            <h3 className={'title'}>{greeting}</h3>
         </main>
     );
 }

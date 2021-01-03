@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 // import { getProductById } from '../../api/products'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 import Spinner from '../../components/Spinner/Spinner'
-import { getProdSolo } from '../../api/products'
+import { getProductsById } from '../../api/products'
 
 const ItemDetailContainer = () => {
 
@@ -14,18 +14,12 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            getProdSolo(id).then((response) => {
-                    response.forEach((productos) => {
-                        if (productos.id === Number(id)) {
-                            setProduct(productos)
-                        }
-                    });
-                    setLoading(false)
-                });
-
-        }, 3000)
-
-    }, [id])
+            getProductsById(id).then((result) => {
+            setProduct(result);
+            setLoading(false); // aca recibimos los resultados por eso sacamos el loading
+          });
+        }, 1000);
+      }, [id]);
 
     return (
         <div id='ItemDetailContainer'>

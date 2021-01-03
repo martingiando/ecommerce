@@ -1,35 +1,32 @@
-import Button from "../../components/Button/Button";
 import useCartContext from "../../Context/CartContext";
+import Button from "../../components/Button/Button";
+
+import CartList from "../../components/CartList/CartList";
+import "../../components/Button/Button.scss";
 
 const Cart = () => {
-    const { products, delProduct, getGrandTotal } = useCartContext();
-    console.log(products);
+  const { products } = useCartContext();
 
-    const handleDel = (p) => {
-        delProduct(p.id)
-    }
-
-    //   const handleTotal = (p) => {
-    //       getGrandTotal(p)
-    //   }
-
-    return (
-        <>
-            <Button content={`Seguir Comprando`} path={'/'} />
-            <div id="Cart">
-                {products.map((product) => (
-                    <div key={product.id}>
-                        <Button content={`X`} callback={() => handleDel(product)} />
-                        <h1> Producto: {product.modelo} </h1>
-                        <h1> Cantidad: {product.quantity} </h1>
-                        <img src={product.img} alt={product.modelo} />
-                    </div>
-                ))}
-                <h3>${getGrandTotal()}</h3>
-                <Button content={`Comprar`} path={'/checkout'} />
-            </div>
-        </>
-    );
+  return (
+    <div id="CartContainer">
+      <h1 className="cart__cart">Carrito</h1>
+      {products.length === 0 ? (
+        <div className="cart__vacio">
+          <h3 className="titulo">
+            Actualmente no tienes artículos en tu Carrito
+          </h3>
+          <Button
+            path="/"
+            content="Volver a comprar"
+          />
+        </div>
+      ) : (
+        <div>
+          <CartList products={products} />
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default Cart
+export default Cart;

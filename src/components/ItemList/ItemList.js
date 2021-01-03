@@ -6,7 +6,6 @@ import CardDeck from 'react-bootstrap/CardDeck'
 const ItemList = ({items}) => {
 
     return(
-        
         <div className={'itemListContainer'}>
             <CardDeck>
             {

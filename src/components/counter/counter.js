@@ -7,7 +7,9 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
 
     const adding = () => {
         if (counter >= initialValue && counter < maxValue) {
-            return setCounter(counter + 1), onAdd(counter + 1)
+            setCounter(counter + 1) 
+            onAdd(counter + 1)
+                
         } else if (counter === maxValue){
             console.log('maxValuee')
         }
@@ -16,7 +18,8 @@ const Counter = ({initialValue, maxValue, onAdd}) => {
 
     const removing = () => {
         if (counter > initialValue) {
-            return setCounter(counter - 1), onAdd(counter - 1)
+            setCounter(counter - 1) 
+            onAdd(counter - 1)
         } else if (counter <= initialValue){
             console.log('minValue')
         }
